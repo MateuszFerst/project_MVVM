@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="projekt1.MVVM.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:projekt1.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Border Width="400"
+                    Height="200">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#5BC3FF" Offset="0.0"/>
+                        <GradientStop Color="#3AA0FF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,400,200"/>
+                </Border.Clip>
+
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Text="Dla studenta&#x0a;smacznie i tanio"
+                                   Foreground="White"
+                                   FontSize="28"
+                                   Margin="20,10,10,0"/>
+
+                        <TextBlock Text="Nie bój się eksperymentować!"
+                                   Foreground="White"
+                                   FontSize="18"
+                                   Margin="20,10,10,0"/>
+                    </StackPanel>
+
+                    <Image Width="200"
+                           Height="200"
+                           Source="/Images/chef.png"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Bottom" Margin="0,0,-35,0"/>
+                </Grid>
+
+            </Border>
+            <Button Width="240"
+                Height="90"
+                BorderThickness="0"
+                    Margin="25,110,0,0">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#3AA0FF" Offset="0.0"/>
+                        <GradientStop Color="#4EFF91" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <TextBlock Text="Poznaj nowe smaki"
+                    Foreground="White"
+                    FontSize="24"/>
+            </Button>
+
+            <Button x:Name="button" Width="240"
+                    Height="90"
+                    Margin="-240,0,0,110"
+                    BorderThickness="0" Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"></Setter>
+                    </Style>
+                </Button.Resources>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#3AA0FF" Offset="0.0"/>
+                        <GradientStop Color="#844EFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <TextBlock Text="Dodawaj przepisy"
+                                   Foreground="White"
+                                   FontSize="24"/>
+
+            </Button>
+        </StackPanel>
+
+        <StackPanel>
+
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin" Value="15,0,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>

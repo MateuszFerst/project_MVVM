@@ -1,0 +1,91 @@
+﻿<Window x:Class="projekt1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projekt1"
+        xmlns:viewModel="clr-namespace:projekt1.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Height="600" Width="920"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#27254F" CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="193"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Książka kucharska dla studentów"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Foreground="White"
+                   FontSize="32"
+                   Margin="20,0,0,0"
+                   FontFamily="/Fonts/#Poppins" Grid.ColumnSpan="2" Height="55" Width="561"/>
+
+            <Button Name="CloseButton" Content="X" Click="CloseButton_Click" 
+                    Grid.Column="1"
+                    HorizontalAlignment="Left" Margin="652,0,0,0" Width="75"
+                    FontSize="26"
+                    FontWeight="Bold"
+                    Foreground="White"
+                    Background="Transparent"
+                    BorderThickness="0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"></Setter>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <StackPanel Grid.Row="1">
+
+                <RadioButton Content="Home"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}" Checked="RadioButton_Checked"/>
+
+                <RadioButton Content="Przepisy"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding DiscoveryViewCommand}"/>
+
+                <RadioButton Content="Dodaj przepis"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding FeaturedViewCommand}"/>
+
+            </StackPanel>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10,10,10,10"
+                            Content="{Binding CurrentView}"
+                            FontFamily="/Fonts/#Poppins"/>
+
+        </Grid>
+
+
+
+    </Border>
+</Window>

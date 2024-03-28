@@ -1,0 +1,215 @@
+﻿<Window x:Class="KsiegarniaPB.Logowanie"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:local="clr-namespace:KsiegarniaPB"
+     mc:Ignorable="d"
+     Title="Dodaj" Height="700" Width="600"
+     WindowStyle="None"
+     AllowsTransparency="true"
+     Background="Transparent"
+     WindowStartupLocation="CenterScreen"
+     >
+
+    <Border CornerRadius="52" BorderThickness="10" BorderBrush="White">
+        <Border CornerRadius="35" BorderThickness="20">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#F0EB36" Offset="0.0"/>
+                    <GradientStop Color="#73C269" Offset="0.5"/>
+                    <GradientStop Color="#1E91A5" Offset="1.0"/>
+                </LinearGradientBrush>
+
+            </Border.BorderBrush>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="938*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#F0EB36" Offset="0.0"/>
+                        <GradientStop Color="#73C269" Offset="0.5"/>
+                        <GradientStop Color="#1E91A5" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+
+
+                <Button Content="Powrót"
+                    x:Name="Exit"
+                    Foreground="White"
+                    FontSize="14"
+                    FontWeight="Medium"
+                    Click="ExitButton_Click"
+                    Margin="352,530,0,35" Width="NaN" Height="NaN" Background="#326647" Grid.ColumnSpan="2">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#1E91A5"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#cd99b8"/>
+                                </Trigger>
+
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="150" Height="50"
+                                CornerRadius="12"
+                                Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                    HorizontalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <TextBox x:Name="Imie"
+                    Background="#CCFF99"
+                    HorizontalAlignment="Left"
+                         FontSize="35"
+                         Margin="134,182,0,0" 
+                         TextWrapping="Wrap"  
+                         VerticalAlignment="Top" 
+                         Width="297" 
+                         Height="52" TextChanged="Imie_TextChanged"/>
+
+
+
+                <Button Content="Zaloguj się"
+                    x:Name="Dodawaj"
+                    Foreground="White"
+                    FontSize="14"
+                    FontWeight="Medium"
+                    Click="LoginButton_Click"
+                    Margin="21,518,404,22" Width="NaN" Height="NaN">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#326647"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#cd99b8"/>
+                                </Trigger>
+
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="150" Height="50"
+                                CornerRadius="12"
+                                Background="{TemplateBinding Background}" Margin="0,25,-38,25">
+                                <ContentPresenter VerticalAlignment="Center"
+                                    HorizontalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button Content="Zarejestruj się"
+                    x:Name="Zarejestruj"
+                    Foreground="White"
+                    FontSize="14"
+                    FontWeight="Medium"
+                    Click="RegisterButton_Click"
+                    Margin="178,530,171,35" Width="NaN" Height="NaN" Background="#326647">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#1E91A5"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#cd99b8"/>
+                                </Trigger>
+
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="150" Height="50"
+                                CornerRadius="12"
+                                Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                    HorizontalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <TextBox x:Name="Nazwisko"
+                    Background="#CCFF99"
+                    FontSize="35"
+                    HorizontalAlignment="Left" 
+                    Margin="134,258,0,0" 
+                    TextWrapping="Wrap" 
+                    VerticalAlignment="Top" 
+                    Width="297" 
+                    Height="52"/>
+                <PasswordBox x:Name="Haslo"
+                    Background="#CCFF99"
+                    FontSize="35"
+                    HorizontalAlignment="Left" 
+                         Margin="134,336,0,0"
+                         VerticalAlignment="Top" 
+                         Width="297" 
+                         Height="52"/>
+
+
+                <Label FontSize="25"
+                  
+                    Content="Imię:" 
+                       HorizontalAlignment="Left" 
+                       Margin="10,182,0,0" 
+                       VerticalAlignment="Top" 
+                       Height="52" 
+                       Width="84"/>
+                <Label FontSize="25"
+                      
+                    Content="Nazwisko:" 
+                    HorizontalAlignment="Left" 
+                    Margin="10,258,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="52" 
+                    Width="124"/>
+                <Label FontSize="25"
+                     
+                    Content="Hasło:" 
+                    HorizontalAlignment="Left" 
+                    Margin="10,336,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="52" 
+                    Width="124"/>
+                <TextBlock FontSize="60"
+                    HorizontalAlignment="Left"
+                           Margin="86,36,0,0" 
+                           TextWrapping="Wrap" 
+                           Text="Dołącz do nas"
+                           TextAlignment="Center"
+                           VerticalAlignment="Top" 
+                           RenderTransformOrigin="0.747,-4.192" 
+                           Height="76" 
+                           Width="380"/>
+
+
+
+
+
+            </Grid>
+        </Border>
+
+
+
+
+    </Border>
+
+
+
+
+</Window>
